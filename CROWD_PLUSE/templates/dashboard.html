@@ -54,14 +54,13 @@
     </div>
 
     <script>
-        // Find the form and overlay elements
         const form = document.getElementById('upload-form');
         const loadingOverlay = document.getElementById('loading-overlay');
 
-        // This check ensures the script only runs if the form exists on the page
+
         if (form) {
             form.addEventListener('submit', function() {
-                // When the form is submitted, show the overlay
+ 
                 loadingOverlay.style.display = 'block';
             });
         }
