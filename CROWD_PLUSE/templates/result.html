@@ -1,0 +1,18 @@
+<html lang="en">
+<head>
+    <title>Analysis Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Processing Complete!</h1>
+        <p>Here is your analyzed video:</p>
+        <video controls>
+            <source src="{{ url_for('static', filename=video_path) }}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <br><br>
+        <a href="/">Analyze Another Video</a>
+    </div>
+</body>
+</html>
