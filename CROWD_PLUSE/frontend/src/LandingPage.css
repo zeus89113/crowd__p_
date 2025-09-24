@@ -1,0 +1,98 @@
+.landing-container {
+  background-color: #0a0a1a; 
+  color: #e0e0e0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  text-align: center;
+  justify-content: center;
+}
+
+.landing-header {
+  padding: 2rem;
+  display: flex; 
+  align-items: center; 
+  gap: 1.5rem;
+}
+
+.logo {
+  width: 150px;
+  height: auto;
+  border-radius: 12px;
+}
+
+.main-title {
+  font-size: 2rem; 
+  font-weight: 700;
+  color: #00d1ff;
+  margin: 0;
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  color: #a0a0b0;
+}
+
+.landing-main {
+  padding: 2rem;
+}
+
+
+.features-section h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #ffffff;
+  justify-content: center;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.feature-card {
+  background-color: #1a1a2e;
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid #3a3a5e;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 209, 255, 0.15);
+}
+
+.feature-card h3 {
+  font-size: 1.5rem;
+  color: #00d1ff;
+  margin-top: 0;
+}
+
+.cta-section {
+  padding: 4rem 2rem;
+}
+
+.cta-button {
+  background-color: #00d1ff;
+  color: #0a0a1a;
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding: 1rem 3rem;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #ffffff;
+  transform: scale(1.05);
+}
+
+.landing-footer {
+  padding: 1.5rem;
+  font-size: 0.9rem;
+  color: #5a5a6e;
+}

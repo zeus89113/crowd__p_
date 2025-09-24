@@ -9,16 +9,21 @@ from werkzeug.utils import secure_filename
 from yolo_processor import process_video_file, generate_stream_frames
 
 app = Flask(__name__)
-CORS(app) # Enable Cross-Origin Resource Sharing
+CORS(app) 
 socketio = SocketIO(app, cors_allowed_origins="*")
-
-# --- In-memory storage for task status (for simplicity) ---
+SECRET_PASSKEY = "098"
 tasks = {}
 
 # --- API Routes ---
+@app.route('/api/login', methods=['POST'])
+def login():
+    data = request.get_json()
+    if data and data.get('passkey') == SECRET_PASSKEY:
+        return jsonify({"success": True})
+    return jsonify({"success": False, "error": "Invalid passkey"}), 401
+
 @app.route('/api/upload', methods=['POST'])
 def upload_video():
-    # ... (this function remains the same) ...
     if 'video' not in request.files: return jsonify({"error": "No video file provided"}), 400
     file = request.files['video']
     filename = secure_filename(file.filename)
@@ -58,7 +63,7 @@ def process_video_file_threaded(task_id, video_path):
     processed_folder = 'static/processed'
     os.makedirs(processed_folder, exist_ok=True)
     
-    # Your original processing function
+    # original processing function
     result_path, analytics = process_video_file(video_path, processed_folder) 
     
     if result_path and analytics is not None:
