@@ -166,8 +166,9 @@ html, body {
 .login-box {
   background: var(--secondary-bg);
   padding: 3rem;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 8px 30px rgba(0, 209, 255, 0.1);
   text-align: center;
   width: 100%;
   max-width: 400px;
@@ -180,16 +181,20 @@ html, body {
   margin-bottom: 1rem;
   border: 1px solid var(--border-color);
   border-radius: 4px;
+  background-color: #0a0a1a;
+  color: var(--primary-text);
 }
 .login-box button {
   width: 100%;
   padding: 0.8rem;
   font-size: 1rem;
+  font-weight: 600;
   border: none;
   border-radius: 4px;
   background-color: var(--accent-color);
-  color: white;
+  color: #0a0a1a;
   cursor: pointer;
+  transition: background-color 0.2s ease;
 }
 .error-message { color: var(--error-color); margin-top: 1rem; }
 
@@ -288,4 +293,17 @@ html, body {
   color: var(--error-color);
   margin-top: 1rem;
   font-weight: 500;
+}
+
+.user-icon-container {
+  cursor: pointer;
+  padding: 0 80rem;
+}
+
+.user-icon {
+  fill: var(--secondary-text);
+  transition: fill 0.2s ease;
+}
+.user-icon-container:hover .user-icon {
+    fill: var(--accent-color);
 }

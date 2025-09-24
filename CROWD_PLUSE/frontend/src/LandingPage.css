@@ -4,6 +4,10 @@
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   text-align: center;
   justify-content: center;
+  min-height: 100vh;
+  min-width: 100vw;      /* Makes the container at least the full screen height */
+  display: flex;          /* Enables flexbox for better content control */
+  flex-direction: column;
 }
 
 .landing-header {

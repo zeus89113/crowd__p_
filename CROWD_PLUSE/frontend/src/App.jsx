@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { io } from 'socket.io-client';
 import './App.css';
@@ -46,7 +46,7 @@ function App() {
 }
 
 
-const Dashboard = () => {
+const Dashboard = ({ onLogout }) => {
   const [task, setTask] = useState(null);
   const [analytics, setAnalytics] = useState(null);
   const [liveCount, setLiveCount] = useState(0);
@@ -97,7 +97,7 @@ const Dashboard = () => {
 
   return (
     <>
-      <Navbar onReset={handleReset} />
+      <Navbar onReset={handleReset}  onLogout={onLogout}/>
       <main className="main-content">
         <section className="video-section">
           {!task || task.status !== 'complete' ? (
@@ -107,7 +107,7 @@ const Dashboard = () => {
           )}
         </section>
         <aside className="analytics-sidebar">
-          <AnalyticsPanel analytics={analytics} liveCount={liveCount} />
+          <AnalyticsPanel analytics={analytics} liveCount={liveCount} taskStatus={task?.status} onReset={handleReset}/>
         </aside>
       </main>
     </>
